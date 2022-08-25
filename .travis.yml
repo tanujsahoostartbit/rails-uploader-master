@@ -1,0 +1,21 @@
+language: ruby
+
+cache: bundler
+
+rvm:
+  - 2.5.5
+
+matrix:
+  fast_finish: true
+
+services: mongodb
+
+addons:
+  apt:
+    sources:
+      - mongodb-3.2-precise
+    packages:
+      - mongodb-org-server
+
+script:
+  - bundle exec rake
